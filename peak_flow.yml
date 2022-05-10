@@ -2,5 +2,6 @@ before_install:
   - bash -c "curl -fsSL https://crystal-lang.org/install.sh | sudo bash"
 environment:
   KEMAL_ENV: test
+
 script:
    - crystal spec

@@ -1,5 +1,7 @@
 before_install:
   - bash -c "curl -fsSL https://crystal-lang.org/install.sh | sudo bash"
+before_script:
+  - shards install
 environment:
   KEMAL_ENV: test
 script:

@@ -1,0 +1,21 @@
+name: locklock
+version: 0.1.0
+
+authors:
+  - kaspernj <k@spernj.org>
+
+dependencies:
+  spec-kemal:
+    github: kemalcr/spec-kemal
+    version: 1.0.0
+  kemal:
+    github: kemalcr/kemal
+    version: 1.1.2
+
+targets:
+  locklock:
+    main: src/locklock.cr
+
+crystal: 1.4.1
+
+license: MIT

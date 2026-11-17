@@ -1,8 +1,28 @@
-before_install:
-  - bash -c "curl -fsSL https://crystal-lang.org/install.sh | sudo bash"
-before_script:
-  - shards install
-environment:
-  KEMAL_ENV: test
-script:
-   - crystal spec
+builds:
+  compile:
+    before_install:
+      - bash -c "curl -fsSL https://crystal-lang.org/install.sh | sudo bash"
+    before_script:
+      - shards install
+    environment:
+      KEMAL_ENV: test
+    script:
+      - crystal build src/locklock.cr
+    paths:
+      - "**/*"
+      - "!spec/**"
+      - "!README.md"
+      - "!LICENSE"
+  spec:
+    before_install:
+      - bash -c "curl -fsSL https://crystal-lang.org/install.sh | sudo bash"
+    before_script:
+      - shards install
+    environment:
+      KEMAL_ENV: test
+    script:
+      - crystal spec
+    paths:
+      - "**/*"
+      - "!README.md"
+      - "!LICENSE"
